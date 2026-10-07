@@ -1,0 +1,31 @@
+body {
+    min-height: 100vh;
+}
+
+.form-cadastro-geral {
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    padding: 40px;
+    width: 50%;
+    min-height: 90vh;
+    align-items: center;
+}
+
+.form-cadastro {
+    background-color: rgb(233, 231, 231);
+    border-radius: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.div-btn-cadastro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: max-content;
+    height: max-content;
+}
