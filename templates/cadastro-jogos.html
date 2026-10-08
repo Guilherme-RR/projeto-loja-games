@@ -64,22 +64,55 @@
     <div class="conteudo-pagina">
         <div class="bloco-pagina">
             <div class="titulo-pagina">
-                <h1>LOGIN</h1>
+                <h1>CADASTRO DE JOGO</h1>
             </div>
-            <div class="form-login-geral">
-                <form class="form-login row g-3" action="" method="POST">
+            <div class="form-cadastro-geral">
+                <form class="form-cadastro row g-3" action="" method="POST">
                     <div class="col-md-12">
-                        <label for="email-user-login" class="form-label">E-mail</label>
-                        <input type="email" class="form-control" id="email-user-login" name="email-user-login" placeholder="usuario@email.com">
+                        <label for="nome" class="form-label">Nome do jogo:</label>
+                        <input type="text" class="form-control" id="nome" placeholder="Nome completo do jogo...">
                     </div>
-                    <div class="col-md-12">
-                        <label for="senha-user-login" class="form-label">Senha</label>
-                        <input type="password" step="0.01" class="form-control" name="senha-user-login" id="senha-user-login">
+                    <div class="col-md-4">
+                        <label for="genero" class="form-label">Gênero:</label>
+                        <select name="genero" id="genero" class="form-select">
+                            <option selected>--ESCOLHA--</option>
+                            <option>Ação</option>
+                            <option>Aventura</option>
+                            <option>FPS</option>
+                            <option>PvP</option>
+                            <option>Co-op</option>
+                            <option>Corrida</option>
+                        </select>
                     </div>
-                    <div class="div-btn-login">
-                        <a class="btn btn-primary" href="{{ url_for('dashboard') }}">ENTRAR</a>
-
-                        <a class="btn btn-primary" href="{{ url_for('cadastro_users') }}">CADASTRAR</a>
+                    <div class="col-md-4">
+                        <label for="plataforma" class="form-label">Plataforma:</label>
+                        <select name="plataforma" id="plataforma" class="form-select">
+                            <option selected>--ESCOLHA--</option>
+                            <option>Playstation 5</option>
+                            <option>Xbox Series x</option>
+                            <option>PC</option>
+                            <option>Nintedo Switch</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="capa" class="form-label">Capa do Jogo:</label>
+                        <input type="image" class="form-control" name="capa" id="capa">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="preco" class="form-label">Preço:</label>
+                        <input type="number" step="0.01" class="form-control" name="preco" id="preco"
+                            placeholder="Ex: 50,00">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="estoque" class="form-label">Quantidade em estoque:</label>
+                        <input type="number" class="form-control" name="estoque" id="estoque" placeholder="Ex: 10">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="lancamento" class="form-label">Data de lançamento:</label>
+                        <input type="date" class="form-control" name="lancamento" id="lancamento">
+                    </div>
+                    <div class="div-btn-cadastro">
+                        <a class="btn btn-primary" href="{{ url_for('lista_jogos') }}">CADASTRAR JOGO</a>
                     </div>
                 </form>
             </div>

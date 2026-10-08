@@ -1,25 +1,74 @@
-body {
-    min-height: 100vh;
+.navbar-geral{
+    background-color: #1f2937 !important;
 }
-
+.cor-text-branco{
+    color: #f9fafb;
+}
+.conteudo-pagina{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    background-color: #111827;
+    color: #f9fafb;
+}
+.bloco-pagina{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.bloco-pagina-lista{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
 .form-cadastro-geral {
     display: flex;
     justify-content: center;
     justify-self: center;
     padding: 40px;
     width: 50%;
-    min-height: 90vh;
     align-items: center;
 }
 
 .form-cadastro {
-    background-color: rgb(233, 231, 231);
+    background-color: #1f2937 !important;
     border-radius: 15px;
     padding-left: 30px;
     padding-right: 30px;
     display: flex;
     justify-content: center;
     padding-bottom: 20px;
+}
+.form-cadastro a{
+    background-color: #111827;
+    border: none;
+}
+.form-login-geral{
+   display: flex;
+    justify-content: center;
+    justify-self: center;
+    padding: 40px;
+    width: 23%;
+    align-items: center; 
+}
+
+.form-login {
+    background-color: #1f2937 !important;
+    border-radius: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: center;
+    min-height: 40vh;
+}
+.form-login a{
+    background-color: #111827;
+    border: none;
 }
 
 .div-btn-cadastro {
@@ -28,4 +77,63 @@ body {
     align-items: center;
     min-width: max-content;
     height: max-content;
+}
+
+.div-btn-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: max-content;
+    height: max-content;
+    gap: 30px;
+}
+.div-btn-login a{
+    min-width: 30vh;
+}
+.titulo-pagina{
+    color: #f9fafb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10vh;
+}
+.titulo-pagina h1{
+    font-weight: bold;
+    font-size: 50px;
+}
+.titulo-pagina-lista{
+    margin-bottom: 50px;
+    margin-top: -50px;
+    color: #f9fafb;
+}
+.titulo-pagina-lista h1{
+    font-weight: bold;
+}
+.footer-geral{
+    text-align: center;
+    background-color: #1f2937 !important;
+    color: white;
+    min-height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.tabela-lista{
+    border-radius: 10px;
+    padding: 15px;
+}
+.tabela-lista th{
+    background-color:#1f2937;
+    color: #f9fafb;
+}
+.bloco-pagina-dashboard{
+    align-self: flex-start;
+}
+.img-dashboard img{
+    height: 70vh;
+}
+.img-navbar{
+    width: 40px;
 }

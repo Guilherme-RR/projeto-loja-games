@@ -61,28 +61,60 @@
             </div>
         </div>
     </nav>
+
     <div class="conteudo-pagina">
         <div class="bloco-pagina">
-            <div class="titulo-pagina">
-                <h1>LOGIN</h1>
+            <div class="titulo-pagina-lista">
+                <h1>LISTAGEM PLATAFORMAS</h1>
             </div>
-            <div class="form-login-geral">
-                <form class="form-login row g-3" action="" method="POST">
-                    <div class="col-md-12">
-                        <label for="email-user-login" class="form-label">E-mail</label>
-                        <input type="email" class="form-control" id="email-user-login" name="email-user-login" placeholder="usuario@email.com">
-                    </div>
-                    <div class="col-md-12">
-                        <label for="senha-user-login" class="form-label">Senha</label>
-                        <input type="password" step="0.01" class="form-control" name="senha-user-login" id="senha-user-login">
-                    </div>
-                    <div class="div-btn-login">
-                        <a class="btn btn-primary" href="{{ url_for('dashboard') }}">ENTRAR</a>
+            <div class="container mt-4">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    
+                    <a href="#" class="btn btn-success">
+                        ADICIONAR
+                    </a>
+                </div>
+                <div class="border rounded p-3">
+                    <table class="table tabela-lista">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>NOME</th>
+                                <th>FABRICANTE</th>
+                                <th>TIPO</th>
+                                <th>DATA DE LANÇAMENTO</th>
+                                <th>AÇÕES</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Playstation 4</td>
+                                <td>Sony</td>
+                                <td>Console de Mesa</td>
+                                <td>15/11/2013</td>
+                                <td>
+                                    <button class="btn btn-warning">Editar</button>
+                                    <button class="btn btn-danger">Excluir</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Nintendo Switch 2</td>
+                                <td>Nintendo</td>
+                                <td>Híbrido</td>
+                                <td>05/06/2025</td>
+                                <td>
+                                    <button class="btn btn-warning">Editar</button>
+                                    <button class="btn btn-danger">Excluir</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                        <a class="btn btn-primary" href="{{ url_for('cadastro_users') }}">CADASTRAR</a>
-                    </div>
-                </form>
+                </div>
             </div>
+            
         </div>
 
     </div>

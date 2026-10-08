@@ -4,14 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Listagem de Usuários</title>
+    <title>Cadastro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-geral">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ url_for('dashboard') }}">LOJA GAMES</a>
+            <a class="navbar-brand cor-text-branco" href="{{ url_for('dashboard') }}"><img src="/static/img/controle.png" class="img-navbar"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -19,25 +21,110 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('dashboard') }}">DASHBOARD</a>
+                        <a class="nav-link cor-text-branco" href="{{ url_for('dashboard') }}">DASHBOARD GESTOR</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('lista') }}">LISTA DE USUÁRIOS</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    <li class="nav-item dropdown cor-text-branco">
+                        <a class="nav-link dropdown-toggle cor-text-branco" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Usuário
+                            Usuários
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ url_for('cadastro') }}">Cadastro</a></li>
-                            <li><a class="dropdown-item" href="{{ url_for('login') }}">Login</a></li>
+                        <ul class="dropdown-menu navbar-geral cor-text-branco">
+                            <li><a class="dropdown-item cor-text-branco" href="{{ url_for('cadastro_users') }}">Cadastro de Usuários</a></li>
+                            <li><a class="dropdown-item cor-text-branco" href="{{ url_for('lista_users') }}">Listagem de Usuários</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown cor-text-branco">
+                        <a class="nav-link dropdown-toggle cor-text-branco" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Jogos
+                        </a>
+                        <ul class="dropdown-menu navbar-geral">
+                            <li><a class="dropdown-item cor-text-branco" href="{{ url_for('cadastro_jogos') }}">Cadastro de Jogos</a></li>
+                            <li><a class="dropdown-item cor-text-branco" href="{{ url_for('lista_jogos') }}">Listagem de Jogos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown navbar-geral">
+                        <a class="nav-link dropdown-toggle cor-text-branco" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Plataformas
+                        </a>
+                        <ul class="dropdown-menu navbar-geral">
+                            <li><a class="dropdown-item cor-text-branco" href="{{ url_for('cadastro_plataformas') }}">Cadastro de Plataformas</a></li>
+                            <li><a class="dropdown-item cor-text-branco" href="{{ url_for('lista_plataformas') }}">Listagem de Plataformas</a></li>
                         </ul>
                     </li>
                 </ul>
+                <form class="d-flex ms-auto">
+                    <input class="form-control me-2" type="search" placeholder="Buscar...">
+                    <a class="btn btn-outline-danger" href="{{ url_for('login') }}">SAIR</a>
+                </form>
             </div>
         </div>
     </nav>
+
+    <div class="conteudo-pagina">
+        <div class="bloco-pagina">
+            <div class="titulo-pagina-lista">
+                <h1>LISTAGEM USUÁRIOS</h1>
+            </div>
+           <div class="container mt-4">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    
+                    <a href="#" class="btn btn-success">
+                        ADICIONAR
+                    </a>
+                </div>
+                <div class="border rounded p-3">
+                    <table class="table tabela-lista">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>NOME</th>
+                                <th>EMAIL</th>
+                                <th>CELULAR</th>
+                                <th>NÍVEL</th>
+                                <th>AÇÕES</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Usuário 1</td>
+                                <td>user1@example.com</td>
+                                <td>1234567890</td>
+                                <td>Usuário</td>
+                                <td>
+                                    <button class="btn btn-warning">Editar</button>
+                                    <button class="btn btn-danger">Excluir</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Usuário 2</td>
+                                <td>user2@example.com</td>
+                                <td>9876543210</td>
+                                <td>Administrador</td>
+                                <td>
+                                    <button class="btn btn-warning">Editar</button>
+                                    <button class="btn btn-danger">Excluir</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <footer class="footer-geral">
+        <div>
+            <p>DESENVOLVIDO POR GUILHERME RAFAEL ROSA E PEDRO HENRIQUE PIOTO ZANUTTO</p>
+        </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>

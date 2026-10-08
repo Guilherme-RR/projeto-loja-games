@@ -61,25 +61,39 @@
             </div>
         </div>
     </nav>
+
     <div class="conteudo-pagina">
         <div class="bloco-pagina">
             <div class="titulo-pagina">
-                <h1>LOGIN</h1>
+                <h1>CADASTRO DE PLATAFORMA</h1>
             </div>
-            <div class="form-login-geral">
-                <form class="form-login row g-3" action="" method="POST">
+            <div class="form-cadastro-geral">
+                <form class="form-cadastro row g-3" action="" method="POST">
                     <div class="col-md-12">
-                        <label for="email-user-login" class="form-label">E-mail</label>
-                        <input type="email" class="form-control" id="email-user-login" name="email-user-login" placeholder="usuario@email.com">
+                        <label for="nome-plat" class="form-label">Nome da plataforma:</label>
+                        <input type="text" class="form-control" name="nome-plat" id="nome-plat" placeholder="Nome completo da plataforma...">
                     </div>
                     <div class="col-md-12">
-                        <label for="senha-user-login" class="form-label">Senha</label>
-                        <input type="password" step="0.01" class="form-control" name="senha-user-login" id="senha-user-login">
+                        <label for="fabricante-plat" class="form-label">Fabricante:</label>
+                        <input type="text" class="form-control" id="fabricante-plat" name="fabricante-plat" placeholder="Ex: Sony...">
                     </div>
-                    <div class="div-btn-login">
-                        <a class="btn btn-primary" href="{{ url_for('dashboard') }}">ENTRAR</a>
-
-                        <a class="btn btn-primary" href="{{ url_for('cadastro_users') }}">CADASTRAR</a>
+                    <div class="col-md-6">
+                        <label for="tipo-plat" class="form-label">Tipo:</label>
+                        <select name="tipo-plat" id="tipo-plat" class="form-select">
+                            <option selected>--ESCOLHA--</option>
+                            <option>Console de Mesa</option>
+                            <option>Console portátil</option>
+                            <option>Híbrido</option>
+                            <option>PC</option>
+                            <option>Mobile</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="lancamento-plat" class="form-label">Data de lançamento:</label>
+                        <input type="date" class="form-control" name="lancamento-plat" id="lancamento-plat">
+                    </div>
+                    <div class="div-btn-cadastro">
+                        <a class="btn btn-primary" href="{{ url_for('lista_plataformas') }}">CADASTRAR PLATAFORMA</a>
                     </div>
                 </form>
             </div>
