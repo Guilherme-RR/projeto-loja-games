@@ -1,3 +1,6 @@
+
+
+{% block titulo_aba %}Entrar — Sistema de Gestão{% endblock %}
 <!doctype html>
 <html lang="pt-BR">
 
@@ -13,7 +16,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-geral">
         <div class="container-fluid">
-            <a class="navbar-brand cor-text-branco" href="{{ url_for('dashboard') }}"><img src="/static/img/controle.png" class="img-navbar"></a>
+            <a class="navbar-brand cor-text-branco" href="{{ url_for('index') }}"><img src="/static/img/controle.png" class="img-navbar"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -61,6 +64,7 @@
             </div>
         </div>
     </nav>
+  {% block conteudo %}
     <div class="conteudo-pagina">
         <div class="bloco-pagina">
             <div class="titulo-pagina">
@@ -86,7 +90,7 @@
         </div>
 
     </div>
-
+  {% endblock %}
 
 
     <footer class="footer-geral">

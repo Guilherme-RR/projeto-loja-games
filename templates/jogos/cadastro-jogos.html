@@ -7,13 +7,13 @@
     <title>Cadastro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="../static/css/style.css">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-geral">
         <div class="container-fluid">
-            <a class="navbar-brand cor-text-branco" href="{{ url_for('dashboard') }}"><img src="/static/img/controle.png" class="img-navbar"></a>
+            <a class="navbar-brand cor-text-branco" href="{{ url_for('index') }}"><img src="/static/img/controle.png" class="img-navbar"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -61,58 +61,60 @@
             </div>
         </div>
     </nav>
-
     <div class="conteudo-pagina">
         <div class="bloco-pagina">
-            <div class="titulo-pagina-lista">
-                <h1>LISTAGEM USUÁRIOS</h1>
+            <div class="titulo-pagina">
+                <h1>CADASTRO DE JOGO</h1>
             </div>
-           <div class="container mt-4">
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                    
-                    <a href="#" class="btn btn-success">
-                        ADICIONAR
-                    </a>
-                </div>
-                <div class="border rounded p-3">
-                    <table class="table tabela-lista">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>NOME</th>
-                                <th>EMAIL</th>
-                                <th>CELULAR</th>
-                                <th>NÍVEL</th>
-                                <th>AÇÕES</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Usuário 1</td>
-                                <td>user1@example.com</td>
-                                <td>1234567890</td>
-                                <td>Usuário</td>
-                                <td>
-                                    <button class="btn btn-warning">Editar</button>
-                                    <button class="btn btn-danger">Excluir</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Usuário 2</td>
-                                <td>user2@example.com</td>
-                                <td>9876543210</td>
-                                <td>Administrador</td>
-                                <td>
-                                    <button class="btn btn-warning">Editar</button>
-                                    <button class="btn btn-danger">Excluir</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                </div>
+            <div class="form-cadastro-geral">
+                <form class="form-cadastro row g-3" action="" method="POST">
+                    <div class="col-md-12">
+                        <label for="nome" class="form-label">Nome do jogo:</label>
+                        <input type="text" class="form-control" id="nome" placeholder="Nome completo do jogo...">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="genero" class="form-label">Gênero:</label>
+                        <select name="genero" id="genero" class="form-select">
+                            <option selected>--ESCOLHA--</option>
+                            <option>Ação</option>
+                            <option>Aventura</option>
+                            <option>FPS</option>
+                            <option>PvP</option>
+                            <option>Co-op</option>
+                            <option>Corrida</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="plataforma" class="form-label">Plataforma:</label>
+                        <select name="plataforma" id="plataforma" class="form-select">
+                            <option selected>--ESCOLHA--</option>
+                            <option>Playstation 5</option>
+                            <option>Xbox Series x</option>
+                            <option>PC</option>
+                            <option>Nintedo Switch</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="capa" class="form-label">Capa do Jogo:</label>
+                        <input type="image" class="form-control" name="capa" id="capa">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="preco" class="form-label">Preço:</label>
+                        <input type="number" step="0.01" class="form-control" name="preco" id="preco"
+                            placeholder="Ex: 50,00">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="estoque" class="form-label">Quantidade em estoque:</label>
+                        <input type="number" class="form-control" name="estoque" id="estoque" placeholder="Ex: 10">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="lancamento" class="form-label">Data de lançamento:</label>
+                        <input type="date" class="form-control" name="lancamento" id="lancamento">
+                    </div>
+                    <div class="div-btn-cadastro">
+                        <a class="btn btn-primary" href="{{ url_for('lista_jogos') }}">CADASTRAR JOGO</a>
+                    </div>
+                </form>
             </div>
         </div>
 
